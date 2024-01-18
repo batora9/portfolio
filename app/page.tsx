@@ -3,7 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import Link from "next/link";
 
-export default async function Blogs() {
+const getMarkdownsFromContentsDir = async () => {
   // contentディレクトリ内のマークダウンファイル一覧を取得
   const postsDirectory = path.join(process.cwd(), "contents");
   const fileNames = fs.readdirSync(postsDirectory);
@@ -26,6 +26,12 @@ export default async function Blogs() {
     // 最新日付順に並び替え
     posts.sort((a, b) => (a.frontmatter.date > b.frontmatter.date ? -1 : 1))
   );
+
+  return posts;
+};
+
+export default async function Blogs() {
+  const posts = await getMarkdownsFromContentsDir();
 
   return (
     <div className="bg-white py-24 sm:py-32">
