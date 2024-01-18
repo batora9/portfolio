@@ -30,8 +30,15 @@ const getMarkdownsFromDir = async (dir: string) => {
 
 export default async function Blogs() {
   // contentディレクトリ内のマークダウンファイル一覧を取得
-  const postsDirectory = path.join(process.cwd(), "contents");
-  const posts = await getMarkdownsFromDir(postsDirectory);
+  const categoriesDirectory = path.join(process.cwd(), "contents"); // /contents
+  const categories = fs.readdirSync(categoriesDirectory);
+  const posts = [];
+  // 各カテゴリフォルダごとに記事を取得
+  for (const category of categories) {
+    const postsDirectory = path.join(process.cwd(), "contents", category); // /contents/[category]
+    const postsInCategory = await getMarkdownsFromDir(postsDirectory);
+    posts.push(...postsInCategory);
+  }
 
   return (
     <div className="bg-white py-24 sm:py-32">
