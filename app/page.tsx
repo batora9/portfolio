@@ -37,7 +37,11 @@ export default async function Blogs() {
   for (const category of categories) {
     const postsDirectory = path.join(process.cwd(), "contents", category); // /contents/[category]
     const postsInCategory = await getMarkdownsFromDir(postsDirectory);
-    posts.push(...postsInCategory);
+    // 記事一つ一つにカテゴリを追加(遷移するためのURLを作成するため)
+    // 例: { slug: 'hello-world', frontmatter: { title: 'Hello World', date: '2021-01-01', description: 'Hello World' } }
+    //     => { slug: 'hello-world', frontmatter: { title: 'Hello World', date: '2021-01-01', description: 'Hello World' }, category: 'blog' }
+    // のようにカテゴリを追加
+    posts.push(...postsInCategory.map((post) => ({ ...post, category })));
   }
 
   return (
@@ -65,7 +69,7 @@ export default async function Blogs() {
                   {/* 記事タイトル・リンク */}
                   <h3 className="mt-3 text-lg font-semibold leading-6 text-blue-700 group-hover:text-blue-400">
                     <Link
-                      href={`/blog/${post.slug}`}
+                      href={`/blog/${post.category}/${post.slug}`}
                       className="mt-3 text-lg font-semibold leading-6 text-blue-700 group-hover:text-blue-400"
                     >
                       {post.frontmatter.title}
