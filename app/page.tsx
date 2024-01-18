@@ -3,16 +3,14 @@ import path from "path";
 import matter from "gray-matter";
 import Link from "next/link";
 
-const getMarkdownsFromContentsDir = async () => {
-  // contentディレクトリ内のマークダウンファイル一覧を取得
-  const postsDirectory = path.join(process.cwd(), "contents");
-  const fileNames = fs.readdirSync(postsDirectory);
+const getMarkdownsFromDir = async (dir: string) => {
+  const fileNames = fs.readdirSync(dir);
 
   // 各ファイルの中身を取得
   const posts = await Promise.all(
     // 各ファイル情報を取得
     fileNames.map(async (fileName) => {
-      const filePath = path.join(postsDirectory, fileName);
+      const filePath = path.join(dir, fileName);
       const fileContents = fs.readFileSync(filePath, "utf8");
       const { data } = matter(fileContents);
 
@@ -31,7 +29,9 @@ const getMarkdownsFromContentsDir = async () => {
 };
 
 export default async function Blogs() {
-  const posts = await getMarkdownsFromContentsDir();
+  // contentディレクトリ内のマークダウンファイル一覧を取得
+  const postsDirectory = path.join(process.cwd(), "contents");
+  const posts = await getMarkdownsFromDir(postsDirectory);
 
   return (
     <div className="bg-white py-24 sm:py-32">
