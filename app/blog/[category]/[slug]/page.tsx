@@ -5,27 +5,13 @@ import matter from "gray-matter";
 import { unified } from "unified";
 import remarkParse from "remark-parse";
 import remarkHtml from "remark-html";
-import Link from "next/link";
-
-// ブログ記事一覧を取得
-const postsDirectory = path.join(process.cwd(), "contents");
-const fileNames = fs.readdirSync(postsDirectory);
-const posts = fileNames.map((fileName) => {
-  const filePath = path.join(postsDirectory, fileName);
-  const fileContents = fs.readFileSync(filePath, "utf8");
-  const { data } = matter(fileContents);
-  return {
-    slug: fileName.replace(/\.md$/, ""),
-    frontmatter: data,
-  };
-});
 
 // ブログ記事ページ
 export default async function BlogPost({ params }: { params: any }) {
   // URLのパラメータから該当するファイル名を取得 (今回は hello-world)
-  const { slug } = params;
+  const { slug, category } = params;
   // ファイルのパスを取得
-  const filePath = path.join(process.cwd(), "contents", `${slug}.md`);
+  const filePath = path.join(process.cwd(), "contents", category, `${slug}.md`);
 
   // ファイルの中身を取得
   const fileContents = fs.readFileSync(filePath, "utf8");
