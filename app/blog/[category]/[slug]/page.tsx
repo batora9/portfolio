@@ -8,7 +8,6 @@ import remarkHtml from "remark-html";
 
 // ブログ記事ページ
 export default async function BlogPost({ params }: { params: any }) {
-  // URLのパラメータから該当するファイル名を取得 (今回は hello-world)
   const { slug, category } = params;
   // ファイルのパスを取得
   const filePath = path.join(process.cwd(), "contents", category, `${slug}.md`);
