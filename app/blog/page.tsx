@@ -2,6 +2,13 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "ブログ一覧",
+  description: "batora's aritcles",
+  icons: [{ rel: "icon", url: "/favicon.ico" }],
+};
 
 const getMarkdownsFromDir = async (dir: string) => {
   const fileNames = fs.readdirSync(dir);
