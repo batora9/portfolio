@@ -5,6 +5,11 @@ import matter from "gray-matter";
 import { unified } from "unified";
 import remarkParse from "remark-parse";
 import remarkHtml from "remark-html";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  icons: [{ rel: "icon", url: "/favicon.ico" }],
+};
 
 // ブログ記事ページ
 export default async function BlogPost({ params }: { params: any }) {
@@ -16,6 +21,8 @@ export default async function BlogPost({ params }: { params: any }) {
   const fileContents = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(fileContents);
   const title = data.title; // 記事のタイトル
+  metadata.title = title; // ページのタイトルを記事のタイトルにする
+  metadata.description = data.description; // ページのディスクリプションを記事のディスクリプションにする
 
   const processedContent = await unified()
     .use(remarkParse)
