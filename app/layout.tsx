@@ -6,7 +6,10 @@ import Favicon from '../public/favicon.ico'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'ばとらの部屋',
+  title: {
+    template: '%s | ばとらの部屋',
+    default: 'ばとらの部屋',
+  },
   description: 'batora\'s portfolio',
   icons: [{ rel: 'icon', url: Favicon.src }],
 }
