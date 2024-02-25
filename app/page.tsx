@@ -14,25 +14,29 @@ export default function Home() {
         <h1 className="text-white text-4xl font-bold">BATORA</h1>
         <p className="text-white">SOFTWARE / WEB ENGINEER</p>
       </div>
-      <footer className="bg-gray-800 py-4 mt-auto">
+      <footer className="bg-gray-800 py-6 mt-auto rounded-tl-3xl rounded-tr-3xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
-            <p className="text-white">
-              © 2024 Your Company. All rights reserved.
-            </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-white">
+            <div className="flex space-x-4 justify-center">
+              <a href="/about" className="text-white hover:text-white text-xl">
                 About
               </a>
-              <a href="#" className="text-gray-300 hover:text-white">
+              <a href="/blog" className="text-white hover:text-white text-xl">
+                Blog
+              </a>
+              <a href="/work" className="text-white hover:text-white text-xl">
+                Work
+              </a>
+              <a href="/contact" className="text-white hover:text-white text-xl">
                 Contact
               </a>
-              <a href="#" className="text-gray-300 hover:text-white">
-                Privacy Policy
+              <a href="https://github.com/batora9" target="_blank" rel="noreferrer">
+                <img src="/github-mark-white.svg" alt="github" className="h-6 w-6" />
+              </a>
+              <a href="https://x.com/265" target="_blank" rel="noreferrer">
+                <img src="/logo-white.png" alt="twitter" className="h-6 w-6" />
               </a>
             </div>
           </div>
-        </div>
       </footer>
     </div>
   );
