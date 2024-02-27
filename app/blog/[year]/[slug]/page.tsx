@@ -13,9 +13,9 @@ export const metadata: Metadata = {
 
 // ブログ記事ページ
 export default async function BlogPost({ params }: { params: any }) {
-  const { slug, category } = params;
+  const { slug, year } = params;
   // ファイルのパスを取得
-  const filePath = path.join(process.cwd(), "contents", category, `${slug}.md`);
+  const filePath = path.join(process.cwd(), "contents", year, `${slug}.md`);
 
   // ファイルの中身を取得
   const fileContents = fs.readFileSync(filePath, "utf8");
