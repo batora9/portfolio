@@ -19,6 +19,20 @@ interface Props {
   searchParams: {};
 }
 
+export async function generateStaticParams() {
+  const postsDirectory = path.join(process.cwd(), "contents");
+  const years = fs.readdirSync(postsDirectory);
+  const paths = [];
+  for (const year of years) {
+    const yearPostsDirectory = path.join(process.cwd(), "contents", year);
+    const posts = fs.readdirSync(yearPostsDirectory);
+    for (const post of posts) {
+      paths.push({ year, slug: post.replace(".md", "") });
+    }
+  }
+  return paths;
+}
+
 // ブログ記事ページ
 export default async function BlogPost( { params } : Props ) {
   const { slug, year } = params;

@@ -8,6 +8,16 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
+export async function generateStaticParams() {
+  const postsDirectory = path.join(process.cwd(), "contents");
+  const years = fs.readdirSync(postsDirectory);
+  const paths = [];
+  for (const year of years) {
+    paths.push({ year });
+  }
+  return paths;
+}
+
 const getMarkdownsFromDir = async (dir: string) => {
   const fileNames = fs.readdirSync(dir);
   const posts = await Promise.all(
