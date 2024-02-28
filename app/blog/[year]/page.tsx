@@ -5,8 +5,6 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "ブログ一覧",
-  description: "batora's aritcles",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
@@ -48,10 +46,14 @@ export default async function BlogYearList({params} : Props) {
   const postsInDirectory = await getMarkdownsFromDir(postsDirectory);
   posts.push(...postsInDirectory);
 
+  // ページのタイトルとディスクリプションを設定
+  metadata.title = `${params.year}年の記事一覧`;
+  metadata.description = `${params.year}年の記事一覧`;
+
   return (
     <div className="bg-white py-24 sm:py-16">
       <h1 className="text-4xl font-bold tracking-tight text-center text-gray-900 sm:text-5xl">
-        Blog
+        {params.year}年のブログ
       </h1>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl">
