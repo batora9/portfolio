@@ -11,8 +11,16 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
+interface Props {
+  params: { 
+    year: string;
+    slug: string
+  };
+  searchParams: {};
+}
+
 // ブログ記事ページ
-export default async function BlogPost({ params }: { params: any }) {
+export default async function BlogPost( { params } : Props ) {
   const { slug, year } = params;
   // ファイルのパスを取得
   const filePath = path.join(process.cwd(), "contents", year, `${slug}.md`);

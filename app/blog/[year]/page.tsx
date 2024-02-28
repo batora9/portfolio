@@ -35,7 +35,13 @@ const getMarkdownsFromDir = async (dir: string) => {
   return posts;
 };
 
-export default async function BlogYearList({ params }: { params: { year: string } }) {
+// { params: { year: '2024' }, searchParams: {} }
+interface Props {
+  params: { year: string };
+  searchParams: {};
+}
+
+export default async function BlogYearList({params} : Props) {
   const posts = [];
   // content/[year]ディレクトリ内の各カテゴリフォルダ内の記事を取得
   const postsDirectory = path.join(process.cwd(), "contents", params.year);
