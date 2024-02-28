@@ -27,11 +27,7 @@ const getMarkdownsFromDir = async (dir: string) => {
         frontmatter: data,
       };
     })
-  ).then((posts) =>
-    // 日付でソート
-    posts.sort((a, b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1))
-  );
-
+  )
   return posts;
 };
 
@@ -50,11 +46,13 @@ export default async function Blogs() {
     // のようにカテゴリを追加
     posts.push(...postsInCategory.map((post) => ({ ...post, category })));
   }
+  // 日付でソート
+  posts.sort((a, b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1));
 
   return (
     <div className="bg-white py-24 sm:py-16">
       <h1 className="text-4xl font-bold tracking-tight text-center text-gray-900 sm:text-5xl">
-        Blog
+        ブログ一覧
       </h1>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl">
