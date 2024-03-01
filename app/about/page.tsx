@@ -28,6 +28,44 @@ export default function About() {
                             </div>
                         </div>
                     </div>
+                    <div className="mt-10 sm:mt-16">
+                        <h2 className="text-2xl font-bold">Profile</h2>
+                        <p className="mt-4 text-gray-400">
+                            関東在住で20歳の情報系の学科所属の大学生です。
+                            趣味はプログラミング、ボウリング、野球、ゲーム、車などなど...
+                        </p>
+                        <p className="mt-4 text-gray-400">
+                            最近では、主にWindowsアプリケーションやWebアプリケーションを作ったり、アルゴリズムや競技プログラミングを触る程度に勉強しています。
+                        </p>
+                    </div>
+                    <div className="mt-10 sm:mt-16">
+                        <h2 className="text-2xl font-bold">Background</h2>
+                        <p className="mt-4 text-gray-400">
+                            小学2年生の時に野球を始め、小学4年生の時に親に買ってもらったパソコンでプログラミングを始めました。はじめはC#を使って簡単なアプリを作ったりしていました。中学・高校では野球部に所属し、勉強と部活を両立していました。大学に入ってからは、プログラミングのサークルに所属し、Webや競技プログラミングを勉強しています。
+                        </p>
+                    </div>
+                    <div className="mt-10 sm:mt-16">
+                        <h2 className="text-2xl font-bold">Skills</h2>
+                        <p className="mt-4 text-gray-400">
+                            主に、TypeScriptを使ったWebアプリケーションの開発や、C#を使ったWindowsアプリケーションの開発をしています。また、Goを使ったバックエンドやC++でアルゴリズムの勉強しています。
+                        </p>
+                    </div>
+                    <div className="mt-10 sm:mt-16">
+                        <h2 className="text-2xl font-bold">Certification</h2>
+                        <p className="mt-4 text-gray-400">
+                            - 実用英語技能検定2級 (2022/11/22)
+                        </p>
+                    </div>
+                    <div className="mt-10 sm:mt-16">
+                        <h2 className="text-2xl font-bold">Contact</h2>
+                        <p className="mt-4 text-gray-400">
+                            お問い合わせは
+                            <a href="/contact" rel="noreferrer" className="text-blue-400 hover:underline">
+                                こちら
+                            </a>
+                            からお願いします。
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
