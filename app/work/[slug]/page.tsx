@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 interface Props {
   params: { 
-    year: string;
+    work: string;
     slug: string
   };
   searchParams: {};
@@ -21,21 +21,19 @@ interface Props {
 
 export async function generateStaticParams() {
   const postsDirectory = path.join(process.cwd(), "works");
-  const years = fs.readdirSync(postsDirectory);
+  const posts = fs.readdirSync(postsDirectory);
   const paths = [];
-  for (const year of years) {
-    const yearPostsDirectory = path.join(process.cwd(), "works");
-    const posts = fs.readdirSync(yearPostsDirectory);
-    for (const post of posts) {
-      paths.push({ slug: post.replace(".md", "") });
-    }
+  for (const post of posts) {
+    const workPostsDirectory = path.join(process.cwd(), "works");
+    const posts = fs.readdirSync(workPostsDirectory);
+    paths.push({ slug: post.replace(".md", "") });
   }
   return paths;
 }
 
 // ブログ記事ページ
 export default async function WorkPost( { params } : Props ) {
-  const { slug, year } = params;
+  const { slug, work } = params;
   // ファイルのパスを取得
   const filePath = path.join(process.cwd(), "works", `${slug}.md`);
 
