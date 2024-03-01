@@ -20,14 +20,14 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  const postsDirectory = path.join(process.cwd(), "contents");
+  const postsDirectory = path.join(process.cwd(), "works");
   const years = fs.readdirSync(postsDirectory);
   const paths = [];
   for (const year of years) {
-    const yearPostsDirectory = path.join(process.cwd(), "contents", year);
+    const yearPostsDirectory = path.join(process.cwd(), "works");
     const posts = fs.readdirSync(yearPostsDirectory);
     for (const post of posts) {
-      paths.push({ year, slug: post.replace(".md", "") });
+      paths.push({ slug: post.replace(".md", "") });
     }
   }
   return paths;
@@ -37,7 +37,7 @@ export async function generateStaticParams() {
 export default async function WorkPost( { params } : Props ) {
   const { slug, year } = params;
   // ファイルのパスを取得
-  const filePath = path.join(process.cwd(), "contents", year, `${slug}.md`);
+  const filePath = path.join(process.cwd(), "works", `${slug}.md`);
 
   // ファイルの中身を取得
   const fileContents = fs.readFileSync(filePath, "utf8");

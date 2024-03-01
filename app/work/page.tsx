@@ -32,12 +32,12 @@ const getMarkdownsFromDir = async (dir: string) => {
 
 export default async function Work() {
   // contentディレクトリ内のマークダウンファイル一覧を取得
-  const categoriesDirectory = path.join(process.cwd(), "contents"); // /contents
+  const categoriesDirectory = path.join(process.cwd(), "works"); // /contents
   const categories = fs.readdirSync(categoriesDirectory);
   const posts = [];
   // 各カテゴリフォルダごとに記事を取得
   for (const category of categories) {
-    const postsDirectory = path.join(process.cwd(), "contents", category); // /contents/[category]
+    const postsDirectory = path.join(process.cwd(), "works");
     const postsInCategory = await getMarkdownsFromDir(postsDirectory);
     // 記事一つ一つにカテゴリを追加(遷移するためのURLを作成するため)
     // 例: { slug: 'hello-world', frontmatter: { title: 'Hello World', date: '2021-01-01', description: 'Hello World' } }
@@ -73,7 +73,7 @@ export default async function Work() {
                   {/* 記事タイトル・リンク */}
                   <h3 className="mt-3 text-lg font-semibold leading-6 text-blue-700 group-hover:text-blue-400">
                     <Link
-                      href={`/blog/${post.category}/${post.slug}`}
+                      href={`/work/${post.slug}`}
                       className="mt-3 text-lg font-semibold leading-6 text-blue-700 group-hover:text-blue-400"
                     >
                       {post.frontmatter.title}
