@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
   title: "About",
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function About() {
     return (
-        <div className="bg-black text-white flex-col min-h-screen py-24 sm:py-16">
+        <div className="bg-black text-white flex-col min-h-screen pt-24 sm:pt-16">
             <h1 className="text-4xl font-bold tracking-tight text-center text-gray-200 sm:text-5xl">
                 About Me
             </h1>
@@ -68,6 +69,7 @@ export default function About() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }
