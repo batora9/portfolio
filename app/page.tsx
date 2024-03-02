@@ -17,16 +17,16 @@ export default function Home() {
       <footer className="bg-gray-800 py-6 mt-auto rounded-tl-3xl rounded-tr-3xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex space-x-4 justify-center">
-              <a href="/about" className="text-white hover:text-white text-xl">
+              <a href="/about" className="text-white hover:text-white text-xl hover:underline">
                 About
               </a>
-              <a href="/blog" className="text-white hover:text-white text-xl">
+              <a href="/blog" className="text-white hover:text-white text-xl hover:underline">
                 Blog
               </a>
-              <a href="/work" className="text-white hover:text-white text-xl">
+              <a href="/work" className="text-white hover:text-white text-xl hover:underline">
                 Work
               </a>
-              <a href="/contact" className="text-white hover:text-white text-xl">
+              <a href="mailto:batora.dev@gmail.com" className="text-white hover:text-white text-xl hover:underline">
                 Contact
               </a>
               <a href="https://github.com/batora9" target="_blank" rel="noreferrer">

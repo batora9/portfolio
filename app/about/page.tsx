@@ -60,7 +60,7 @@ export default function About() {
                         <h2 className="text-2xl font-bold">Contact</h2>
                         <p className="mt-4 text-gray-400">
                             お問い合わせは
-                            <a href="/contact" rel="noreferrer" className="text-blue-400 hover:underline">
+                            <a href="mailto:batora.dev@gmail.com" rel="noreferrer" className="text-blue-400 hover:underline">
                                 こちら
                             </a>
                             からお願いします。
