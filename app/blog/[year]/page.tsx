@@ -61,21 +61,21 @@ export default async function BlogYearList({params} : Props) {
   metadata.description = `${params.year}年の記事一覧`;
 
   return (
-    <div className="bg-white py-24 sm:py-16">
-      <h1 className="text-4xl font-bold tracking-tight text-center text-gray-900 sm:text-5xl">
+    <div className="bg-black text-white flex-col min-h-screen py-24 sm:py-16">
+      <h1 className="text-4xl font-bold tracking-tight text-center text-gray-200 sm:text-5xl">
         {params.year}年のブログ
       </h1>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl">
-          <div className="mt-10 space-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16">
+          <div className="mt-10 space-y-8 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16">
             {posts.map((post) => (
               <article
                 key={post.slug}
-                className="flex max-w-xl flex-col items-start justify-between"
+                className="flex max-w-xl flex-col items-start justify-between border-r border-b border-l border-t border-gray-200 pb-2 rounded-tl-xl rounded-tr-xl rounded-bl-xl rounded-br-xl shadow-lg bg-gray-800"
               >
                 <div className="group relative">
                   {/* 日付を表示 */}
-                  <div className="text-sm text-gray-500">
+                  <div className="mt-3 mx-4 text-sm text-gray-400">
                     <div className="flex items-center">
                       <time dateTime={post.frontmatter.date}>
                         {post.frontmatter.date}
@@ -83,17 +83,17 @@ export default async function BlogYearList({params} : Props) {
                     </div>
                   </div>
                   {/* 記事タイトル・リンク */}
-                  <h3 className="mt-3 text-lg font-semibold leading-6 text-blue-700 group-hover:text-blue-400">
+                  <h3 className="mt-2 mx-4 text-lg font-semibold leading-6 text-blue-400 group-hover:text-blue-700">
                     <Link
                       href={`/blog/${params.year}/${post.slug}`}
-                      className="mt-3 text-lg font-semibold leading-6 text-blue-700 group-hover:text-blue-400"
+                      className="mt-2 text-lg font-semibold leading-6 text-blue-400 group-hover:text-blue-700"
                     >
                       {post.frontmatter.title}
                     </Link>
                   </h3>
                   {/* 記事説明文を表示 */}
                   <p
-                    className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600"
+                    className="mt-5 mx-4 line-clamp-3 text-sm leading-6 text-gray-400"
                     dangerouslySetInnerHTML={{
                       __html: `${post.frontmatter.description}`,
                     }}
