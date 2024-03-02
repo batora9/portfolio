@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import Link from "next/link";
 import { Metadata } from "next";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 export const metadata: Metadata = {
   title: "Work",
@@ -45,6 +46,7 @@ export default async function Work() {
 
   return (
     <div className="flex bg-black flex-col min-h-screen">
+      <Header />
       <div className="bg-black text-white flex-col py-24 sm:py-16">
         <h1 className="text-4xl font-bold tracking-tight text-center text-gray-200 sm:text-5xl">
           Work
