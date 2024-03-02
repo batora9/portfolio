@@ -11,13 +11,13 @@ export default function About() {
   return (
     <div className="flex bg-black flex-col min-h-screen">
       <Header />
-      <div className="bg-black text-white flex-col pt-24 sm:pt-16">
-        <h1 className="text-4xl font-bold tracking-tight text-center text-gray-200 sm:text-5xl">
+      <div className="bg-black text-white flex-col pb-24 pt-8 sm:py-16">
+        <h1 className="text-3xl font-bold tracking-tight text-center text-gray-200 sm:text-4xl">
           About Me
         </h1>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl">
-            <div className="flex justify-center mt-10 space-y-4 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16">
+            <div className="flex justify-center mt-10 space-y-4 border-t border-gray-200 pt-10 sm:mt-8 sm:pt-16">
               <img src="/favicon.ico" alt="logo" className="h-32 w-32 mx-8" />
                 <div className="text-center">
                   <h2 className="text-2xl font-bold">ばとら</h2>

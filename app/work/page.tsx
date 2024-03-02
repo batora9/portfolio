@@ -47,13 +47,13 @@ export default async function Work() {
   return (
     <div className="flex bg-black flex-col min-h-screen">
       <Header />
-      <div className="bg-black text-white flex-col py-24 sm:py-16">
-        <h1 className="text-4xl font-bold tracking-tight text-center text-gray-200 sm:text-5xl">
+      <div className="bg-black text-white flex-col pb-24 pt-8 sm:py-16">
+        <h1 className="text-3xl font-bold tracking-tight text-center text-gray-200 sm:text-4xl">
           Work
         </h1>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl">
-            <div className="mt-10 space-y-8 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16">
+            <div className="mt-10 space-y-8 border-t border-gray-200 pt-10 sm:mt-8 sm:pt-8">
               {posts.map((post) => (
                 <article
                   key={post.slug}
