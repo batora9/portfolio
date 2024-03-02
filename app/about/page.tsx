@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 export const metadata: Metadata = {
   title: "About",
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <div className="flex bg-black flex-col min-h-screen">
+      <Header />
       <div className="bg-black text-white flex-col pt-24 sm:pt-16">
         <h1 className="text-4xl font-bold tracking-tight text-center text-gray-200 sm:text-5xl">
           About Me
