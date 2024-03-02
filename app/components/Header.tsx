@@ -3,7 +3,7 @@ export default function Header() {
     <header className="bg-gray-800 px-4 py-2 flex justify-between items-center rounded-br-3xl rounded-bl-3xl">
       <div className="flex">
         <a href="/" className="md:px-8 flex items-center">
-          <img src="/favicon.ico" alt="logo" className="h-16 w-16 mx-auto mr-3" />
+          <img src="/favicon.ico" alt="logo" className="h-12 w-12 mx-auto mr-3" />
           <h1 className="text-white text-2xl font-bold">batoran.com</h1>
         </a>
       </div>
