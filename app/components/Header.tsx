@@ -4,7 +4,7 @@ export default function Header() {
       <div className="flex">
         <a href="/" className="md:px-16 flex items-center">
           <img src="/favicon.ico" alt="logo" className="h-12 w-12 mx-auto mr-3" />
-          <h1 className="text-white text-2xl font-bold">batoran.com</h1>
+          <p className="text-white text-2xl font-bold">batoran.com</p>
         </a>
       </div>
       <nav className="flex space-x-4">
