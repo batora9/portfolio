@@ -66,9 +66,9 @@ export default async function BlogYearList({params} : Props) {
     <div className="flex bg-black flex-col min-h-screen">
       <Header />
       <div className="bg-black text-white flex-col pb-24 pt-8 sm:py-16">
-        <h1 className="text-3xl font-bold tracking-tight text-center text-gray-200 sm:text-4xl">
+        <p className="text-3xl font-bold tracking-tight text-center text-gray-200 sm:text-4xl">
           {params.year}年のブログ
-        </h1>
+        </p>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl">
             <div className="mt-10 space-y-8 border-t border-gray-200 pt-10 sm:mt-8 sm:pt-8">
@@ -87,14 +87,14 @@ export default async function BlogYearList({params} : Props) {
                       </div>
                     </div>
                     {/* 記事タイトル・リンク */}
-                    <h3 className="mt-2 mx-4 text-lg font-semibold leading-6 text-blue-400 group-hover:text-blue-700">
+                    <p className="mt-2 mx-4 text-lg font-semibold leading-6 text-blue-400 group-hover:text-blue-700">
                       <Link
                         href={`/blog/${params.year}/${post.slug}`}
                         className="mt-2 text-lg font-semibold leading-6 text-blue-400 group-hover:text-blue-700"
                       >
                         {post.frontmatter.title}
                       </Link>
-                    </h3>
+                    </p>
                     {/* 記事説明文を表示 */}
                     <p
                       className="mt-5 mx-4 line-clamp-3 text-sm leading-6 text-gray-400"

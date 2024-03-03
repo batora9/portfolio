@@ -8,14 +8,14 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="bg-black flex-col flex min-h-screen">
+    <div className="flex bg-black flex-col flex min-h-screen">
       <div className="bg-black flex items-center justify-center flex-grow flex-col">
         <img src="/favicon.ico" alt="logo" className="h-32 w-32" />
         <h1 className="text-white text-4xl font-bold">BATORA</h1>
         <p className="text-white">SOFTWARE / WEB ENGINEER</p>
       </div>
       <footer className="bg-gray-800 py-6 mt-auto rounded-tl-3xl rounded-tr-3xl">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-6 px-8">
             <div className="flex space-x-4 justify-center">
               <a href="/about" className="text-white hover:text-white text-xl hover:underline">
                 About

@@ -6,8 +6,15 @@ import { unified } from "unified";
 import remarkParse from "remark-parse";
 import remarkHtml from "remark-html";
 import { Metadata } from "next";
+import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import rehypePrettyCode from "rehype-pretty-code";
+import 'katex/dist/katex.min.css';
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
+import remarkRehype from 'remark-rehype';
+import rehypeStringify from 'rehype-stringify';
 
 export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
@@ -53,9 +60,15 @@ export default async function BlogPost( { params } : Props ) {
 
   const processedContent = await unified()
     .use(remarkParse)
+    .use(remarkGfm)
+    .use(remarkMath)
     .use(remarkHtml)
+    .use(remarkRehype)
+    .use(rehypeKatex)
+    .use(rehypePrettyCode)
+    .use(rehypeStringify)
     .process(content);
-  const contentHtml = processedContent.toString(); // 記事の本文をHTMLに変換
+  const contentHtml = processedContent.toString(); // マークダウンをHTMLに変換
 
   return (
     <div className="flex bg-black flex-col min-h-screen">
@@ -68,7 +81,8 @@ export default async function BlogPost( { params } : Props ) {
           <p className="mt-2 text-sm text-gray-400">作成日 {date}</p>
         </div>
         <div
-          className="prose prose-lg text-white mx-auto max-w-3xl mt-8"
+          className="mt-8 mx-auto max-w-3xl text-base leading-7 text-white"
+          id='markdown-body'
           dangerouslySetInnerHTML={{ __html: contentHtml }}
         />
       </div>

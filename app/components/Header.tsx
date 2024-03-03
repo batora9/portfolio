@@ -7,7 +7,7 @@ export default function Header() {
           <p className="text-white text-2xl font-bold">batoran.com</p>
         </a>
       </div>
-      <nav className="flex space-x-4">
+      <nav className="flex sm:space-x-4">
         <a href="/" className="text-white hover:text-white text-xl hover:underline">
           Home
         </a>
