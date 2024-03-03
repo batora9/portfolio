@@ -32,3 +32,7 @@
 #markdown-body a {
   @apply text-indigo-600;
 }
+
+#markdown-body code {
+  @apply text-sm font-mono bg-gray-800 text-white p-1;
+}

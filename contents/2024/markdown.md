@@ -63,14 +63,14 @@ description: "てきとうに記法をまとめました"
 ## コードブロック
 
 入力例
-```
+~~~
 ```c:sample.c
  void hello()
   {
       console.log("Hello World!");
   }
 ```
-```
+~~~
 
 実行結果
 ```c:sample.c
@@ -82,12 +82,12 @@ description: "てきとうに記法をまとめました"
 
 `diff_`とつけることでコードの比較ができる
 入力例
-```
+~~~
 ```diff_c
   - console.log("Hello");
   + console.log("World!");
 ```
-```
+~~~
 
 実行結果
 ```diff_c
