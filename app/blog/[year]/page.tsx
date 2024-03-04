@@ -51,12 +51,26 @@ interface Props {
   searchParams: {};
 }
 
+interface Post {
+  slug: string;
+  content: string;
+  category?: string;
+  frontmatter: {
+      [key: string]: any;
+  };
+}
+
 export default async function BlogYearList({params} : Props) {
-  const posts = [];
+  const posts: Post[] = [];
   // content/[year]ディレクトリ内の各カテゴリフォルダ内の記事を取得
   const postsDirectory = path.join(process.cwd(), "contents", params.year);
   const postsInDirectory = await getMarkdownsFromDir(postsDirectory);
-  posts.push(...postsInDirectory);
+  const postsInDirectoryFilteredByPublished = postsInDirectory.filter((p) => {
+    return p.frontmatter.published;
+  });
+  postsInDirectoryFilteredByPublished.forEach((post) => {
+    posts.push(post);
+  });
 
   // ページのタイトルとディスクリプションを設定
   metadata.title = `${params.year}年の記事一覧`;
@@ -66,8 +80,8 @@ export default async function BlogYearList({params} : Props) {
     <div className="flex bg-black flex-col min-h-screen">
       <Header />
       <div className="bg-black text-white flex-col pb-16 pt-24">
-      <p className="text-3xl font-bold tracking-tight text-center text-gray-200 sm:text-4xl">
-          {params.year}年のブログ
+        <p className="text-3xl font-bold tracking-tight text-center text-gray-200 sm:text-4xl">
+          {params.year}年のブログ一覧
         </p>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl">

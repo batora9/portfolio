@@ -15,6 +15,7 @@ import rehypeStringify from 'rehype-stringify';
 import remarkRehype from 'remark-rehype';
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import rehypeSlug from 'rehype-slug';
 
 export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
@@ -31,13 +32,16 @@ interface Props {
 export async function generateStaticParams() {
   const postsDirectory = path.join(process.cwd(), "works");
   const posts = fs.readdirSync(postsDirectory);
-  const paths = [];
+  const params = [];
   for (const post of posts) {
     const workPostsDirectory = path.join(process.cwd(), "works");
     const posts = fs.readdirSync(workPostsDirectory);
-    paths.push({ slug: post.replace(".md", "") });
+    const filePath = path.join(process.cwd(), "works", post);
+    const fileContents = fs.readFileSync(filePath, "utf8");
+    const { data } = matter(fileContents);
+    data.published && params.push({ slug: post.replace(".md", "") });
   }
-  return paths;
+  return params;
 }
 
 // ブログ記事ページ
@@ -50,7 +54,6 @@ export default async function WorkPost( { params } : Props ) {
   const fileContents = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(fileContents);
   const title = data.title; // 記事のタイトル
-  const description = data.description; // 記事のディスクリプション
   const date = data.date; // 記事の日付
 
   metadata.title = title; // ページのタイトルを記事のタイトルにする
@@ -62,6 +65,7 @@ export default async function WorkPost( { params } : Props ) {
     .use(remarkMath)
     .use(remarkHtml)
     .use(remarkRehype)
+    .use(rehypeSlug)
     .use(rehypeKatex)
     .use(rehypePrettyCode)
     .use(rehypeStringify)

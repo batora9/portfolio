@@ -32,15 +32,30 @@ const getMarkdownsFromDir = async (dir: string) => {
   return posts;
 };
 
+interface Post {
+  slug: string;
+  content: string;
+  category?: string;
+  frontmatter: {
+      [key: string]: any;
+  };
+}
+
 export default async function Work() {
   // contentディレクトリ内のマークダウンファイル一覧を取得
   const categoriesDirectory = path.join(process.cwd(), "works"); // /contents
   const categories = fs.readdirSync(categoriesDirectory);
-  const posts = [];
+  const posts: Post[] = [];
   //worksディレクトリ内の記事を取得
   const postsDirectory = path.join(process.cwd(), "works"); // /contents/[category]
   const postsInCategory = await getMarkdownsFromDir(postsDirectory);
-  posts.push(...postsInCategory.map((post) => ({ ...post })));
+  const postsInCategoryFilteredByPublished = postsInCategory.filter((p) => {
+    return p.frontmatter.published;
+  });
+  postsInCategoryFilteredByPublished.forEach((post) => {
+    posts.push(post);
+  });
+  
   // 日付でソート
   posts.sort((a, b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1));
 
