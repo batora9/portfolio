@@ -14,7 +14,8 @@ FPSゲームをしているときにマウスクリックの連打の速さが�
 
 ## 概要
 
-外観はこんな感じです。左上からCPS、合計クリック数、CPSハイスコアとなってます。
+外観はこんな感じです。左上からCPS、合計クリック数、CPSハイスコアとなってます。  
+名前がRealtime CPSになっているのはご愛敬…（リアルタイムは和製英語なので）
 ![realtimeCPS](/images/realtimeCPS.png)
 ソースコードは[Github](https://github.com/batora9/realtimeCPS)から
 
