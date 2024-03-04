@@ -34,8 +34,6 @@ export async function generateStaticParams() {
   const posts = fs.readdirSync(postsDirectory);
   const params = [];
   for (const post of posts) {
-    const workPostsDirectory = path.join(process.cwd(), "works");
-    const posts = fs.readdirSync(workPostsDirectory);
     const filePath = path.join(process.cwd(), "works", post);
     const fileContents = fs.readFileSync(filePath, "utf8");
     const { data } = matter(fileContents);
