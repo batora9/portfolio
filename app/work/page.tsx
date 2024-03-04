@@ -57,7 +57,7 @@ export default async function Work() {
   });
   
   // 日付でソート
-  posts.sort((a, b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1));
+  posts.sort((a, b) => (a.frontmatter.createdAt < b.frontmatter.createdAt ? 1 : -1));
 
   return (
     <div className="flex bg-black flex-col min-h-screen">
@@ -78,8 +78,8 @@ export default async function Work() {
                     {/* 日付を表示 */}
                     <div className="mt-3 mx-4 text-sm text-gray-400">
                       <div className="flex items-center">
-                        <time dateTime={post.frontmatter.date}>
-                          {post.frontmatter.date}
+                        <time dateTime={post.frontmatter.createdAt}>
+                          {post.frontmatter.createdAt}
                         </time>
                       </div>
                     </div>
