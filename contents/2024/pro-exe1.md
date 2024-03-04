@@ -2,6 +2,7 @@
 title: プログラミング演習I
 date: "2024-03-03"
 description: "プログラミング演習の授業でのメモ"
+published: true
 ---
 
 ただの自己満メモ

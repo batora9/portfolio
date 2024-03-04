@@ -2,6 +2,7 @@
 title: Windows上で簡易的にLaTeXの環境を構築する
 date: "2023-06-22"
 description: "VSCodeを用いてWindowsでLaTeXの環境構築の仕方について説明します。この記事では、LaTeXで編集したものをPDF化できるところまでを説明します。"
+published: true
 ---
 
 VSCodeを用いてWindowsでLaTeXの環境構築の仕方について説明します。この記事では、LaTeXで編集したものをPDF化できるところまでを説明します。また、後述する`settings.json`や`.latexmkrc`の記述については詳しくは説明しません。（詳しく解説している記事がたくさんあるので）

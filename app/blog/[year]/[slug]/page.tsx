@@ -31,15 +31,18 @@ interface Props {
 export async function generateStaticParams() {
   const postsDirectory = path.join(process.cwd(), "contents");
   const years = fs.readdirSync(postsDirectory);
-  const paths = [];
+  const params = [];
   for (const year of years) {
     const yearPostsDirectory = path.join(process.cwd(), "contents", year);
     const posts = fs.readdirSync(yearPostsDirectory);
     for (const post of posts) {
-      paths.push({ year, slug: post.replace(".md", "") });
+      const filePath = path.join(process.cwd(), "contents", year, post);
+      const fileContents = fs.readFileSync(filePath, "utf8");
+      const { data } = matter(fileContents);
+      data.published && params.push({ year, slug: post.replace(".md", "") });
     }
   }
-  return paths;
+  return params;
 }
 
 // ブログ記事ページ

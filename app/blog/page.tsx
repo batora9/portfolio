@@ -33,11 +33,20 @@ const getMarkdownsFromDir = async (dir: string) => {
   return posts;
 };
 
+interface Post {
+  slug: string;
+  content: string;
+  category?: string;
+  frontmatter: {
+      [key: string]: any;
+  };
+}
+
 export default async function Blogs() {
   // contentディレクトリ内のマークダウンファイル一覧を取得
   const categoriesDirectory = path.join(process.cwd(), "contents"); // /contents
   const categories = fs.readdirSync(categoriesDirectory);
-  const posts = [];
+  const posts: Post[] = [];
   // 各カテゴリフォルダごとに記事を取得
   for (const category of categories) {
     const postsDirectory = path.join(process.cwd(), "contents", category); // /contents/[category]
@@ -46,7 +55,14 @@ export default async function Blogs() {
     // 例: { slug: 'hello-world', frontmatter: { title: 'Hello World', date: '2021-01-01', description: 'Hello World' } }
     //     => { slug: 'hello-world', frontmatter: { title: 'Hello World', date: '2021-01-01', description: 'Hello World' }, category: 'blog' }
     // のようにカテゴリを追加
-    posts.push(...postsInCategory.map((post) => ({ ...post, category })));
+    const postsInCategoryFilteredByPublished = postsInCategory.filter((p) => {
+      return p.frontmatter.published;
+    });
+    postsInCategoryFilteredByPublished.forEach((post) => {
+      const newPost: Post = post;
+      newPost.category = category;
+      posts.push(newPost);
+    });
   }
   // 日付でソート
   posts.sort((a, b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1));
