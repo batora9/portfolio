@@ -14,7 +14,7 @@ export default function Header() {
 
   return (
     <header className="bg-gray-800 max-md:px-4 px-16 py-2 flex justify-between items-center rounded-br-3xl rounded-bl-3xl fixed top-0 left-0 right-0 z-40">
-      <Link href="/" className="flex items-center">
+      <Link href="/" className="flex items-center z-50">
         <img src="/favicon.ico" alt="logo" className="h-12 w-12 mx-auto mr-3" />
         <p className="text-white text-2xl font-bold">batoran.com</p>
       </Link>
