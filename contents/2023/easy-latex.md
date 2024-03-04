@@ -10,11 +10,11 @@ VSCodeを用いてWindowsでLaTeXの環境構築の仕方について説明し�
 1. Visual Studio Codeの導入
 2. TexLiveの導入
 3. LaTeX Workshopの導入と整備
-4. PDF化（ビルド）のやり方 
+4. PDF化（ビルド）のやり方
 5. おわりに
 
 # 1. Visual Studio Codeの導入
-Visual Studio Code（以下VSCodeとします）のインストールが済んでない方は以下のサイトからインストーラーをダウンロードし指示に従ってください。
+Visual Studio Code（以下VSCodeとします）のインストールが済んでない方は以下のサイトからインストーラーをダウンロードし指示に従ってください。  
 https://code.visualstudio.com/
 
 
@@ -24,7 +24,7 @@ https://qiita.com/miriwo/items/306769d90d910944e471
 
 # 2. TexLiveの導入
 ### インストーラのダウンロード
-https://www.tug.org/texlive/acquire-netinstall.html
+https://www.tug.org/texlive/acquire-netinstall.html  
 上のリンクから`install-ti-windows.exe`をダウンロードします。
 注）安全が確認されていないという警告がでますが無視して保存してください。
 ![スクリーンショット 2023-06-22 133028.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3367954/43dd6044-b7e3-fbdd-915a-70be07d75e6b.png)
@@ -140,8 +140,8 @@ VSCode上のLaTeXタブに移動し`Build LaTeX project`をクリックまたは
 今回の環境構築は、初心者向けにTeXファイルのPDF化の必要最低限の設定かつ高度な設定についての解説は省略しました。自分の使用用途や授業に応じて自分なりに設定を変えてみてはいかがでしょうか。
 
 # 参考記事
-[【大学生向け】LaTeX完全導入ガイド Windows編 (2022年)](https://qiita.com/passive-radio/items/623c9a35e86b6666b89e)  
-[VSCode で最高の LaTeX 環境を作る](https://qiita.com/rainbartown/items/d7718f12d71e688f3573)  
-[Latexmkから学ぶPDF化までの処理の流れ](https://qiita.com/Rumisbern/items/d9de41823aa46d5f05a8)  
-[0からTeX環境を構築する](https://qiita.com/tatmius/items/f63a5c668c4a3dd60e08)  
-[TeX Live のクソデカ容量を削減したい！](https://blog.loliver.net/2021/11/06/texlive_minimal_install/)
+- [【大学生向け】LaTeX完全導入ガイド Windows編 (2022年)](https://qiita.com/passive-radio/items/623c9a35e86b6666b89e)  
+- [VSCode で最高の LaTeX 環境を作る](https://qiita.com/rainbartown/items/d7718f12d71e688f3573)  
+- [Latexmkから学ぶPDF化までの処理の流れ](https://qiita.com/Rumisbern/items/d9de41823aa46d5f05a8)  
+- [0からTeX環境を構築する](https://qiita.com/tatmius/items/f63a5c668c4a3dd60e08)  
+- [TeX Live のクソデカ容量を削減したい！](https://blog.loliver.net/2021/11/06/texlive_minimal_install/)
