@@ -13,53 +13,50 @@ export default function HeaderShort() {
   };
 
   return (
-    <header className="bg-gray-800 px-4 py-2 flex justify-between items-center rounded-br-3xl rounded-bl-3xl">
-        <div className="flex">
-            <a href="/" className="md:px-16 flex items-center">
-            <img src="/favicon.ico" alt="logo" className="h-12 w-12 mx-auto mr-3" />
-            <p className="text-white text-2xl font-bold">batoran.com</p>
-            </a>
-        </div>
-
+    <header className="bg-gray-800 px-16 py-2 flex justify-between items-center rounded-br-3xl rounded-bl-3xl fixed top-0 left-0 right-0 z-40">
+      <Link href="/" className="flex items-center">
+        <img src="/favicon.ico" alt="logo" className="h-12 w-12 mx-auto mr-3" />
+        <p className="text-white text-2xl font-bold">batoran.com</p>
+      </Link>
       <nav
         className={
           isOpen
             ? "z-40 bg-gray-800 fixed top-0 right-0 bottom-0 left-0 h-screen flex flex-col"
-            : "fixed right-[-100%] md:right-4"
+            : "md:right-4 max-md:hidden"
         }
       >
         <ul
           className={
             isOpen
               ? "flex h-screen justify-center items-center flex-col gap-6 text-xl"
-              : "block md:flex md:gap-8"
+              : "block md:flex md:gap-6"
           }
         >
-            <li>
-                <Link href="/" onClick={handleMenuClose} className="text-xl text-white hover:underline">
-                Home
-                </Link>
-            </li>
-            <li>
-                <Link href="/about" onClick={handleMenuClose} className="text-xl text-white hover:underline">
-                About
-                </Link>
-            </li>
-            <li>
-                <Link href="/blog" onClick={handleMenuClose} className="text-xl text-white hover:underline">
-                Blog
-                </Link>
-            </li>
-            <li>
-                <Link href="/work" onClick={handleMenuClose} className="text-xl text-white hover:underline">
-                Work
-                </Link>
-            </li>
-            <li>
-                <a href="mailto:batora.dev@gmail.com" onClick={handleMenuClose} className="text-xl text-white hover:underline pr-4">
-                Contact
-                </a>
-            </li>
+          <li>
+            <Link href="/" onClick={handleMenuClose} className="text-xl text-white hover:underline">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link href="/about" onClick={handleMenuClose} className="text-xl text-white hover:underline">
+              About
+            </Link>
+          </li>
+          <li>
+            <Link href="/blog" onClick={handleMenuClose} className="text-xl text-white hover:underline">
+              Blog
+            </Link>
+          </li>
+          <li>
+            <Link href="/work" onClick={handleMenuClose} className="text-xl text-white hover:underline">
+              Work
+            </Link>
+          </li>
+          <li>
+            <a href="mailto:batora.dev@gmail.com" onClick={handleMenuClose} className="text-xl text-white hover:underline">
+              Contact
+            </a>
+          </li>
         </ul>
       </nav>
       <button className="z-50 space-y-2 md:hidden" onClick={handleMenuOpen}>

@@ -12,7 +12,7 @@ export default function About() {
   return (
     <div className="flex bg-black flex-col min-h-screen">
       <HeaderShort />
-      <div className="bg-black text-white flex-col pb-24 pt-8 sm:py-16">
+      <div className="bg-black text-white flex-col pb-16 pt-24">
         <h1 className="text-3xl font-bold tracking-tight text-center text-gray-200 sm:text-4xl">
           About Me
         </h1>
