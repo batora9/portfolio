@@ -1,6 +1,7 @@
 ---
 title: Windows上で簡易的にLaTeXの環境を構築する
-date: "2023-06-22"
+createdAt: "2023-06-22"
+updatedAt: "2023-06-22"
 description: "VSCodeを用いてWindowsでLaTeXの環境構築の仕方について説明します。この記事では、LaTeXで編集したものをPDF化できるところまでを説明します。"
 published: true
 ---
@@ -8,11 +9,11 @@ published: true
 VSCodeを用いてWindowsでLaTeXの環境構築の仕方について説明します。この記事では、LaTeXで編集したものをPDF化できるところまでを説明します。また、後述する`settings.json`や`.latexmkrc`の記述については詳しくは説明しません。（詳しく解説している記事がたくさんあるので）
 
 # 目次
-1. Visual Studio Codeの導入
-2. TexLiveの導入
-3. LaTeX Workshopの導入と整備
-4. PDF化（ビルド）のやり方
-5. おわりに
+1. [Visual Studio Codeの導入](#1-visual-studio-codeの導入)
+2. [TexLiveの導入](#2-texliveの導入)
+3. [LaTeX Workshopの導入と整備](#3-latex-workshopの導入と整備)
+4. [PDF化（ビルド）のやり方](#4-pdf化ビルドのやり方)
+5. [おわりに](#5-おわりに)
 
 # 1. Visual Studio Codeの導入
 Visual Studio Code（以下VSCodeとします）のインストールが済んでない方は以下のサイトからインストーラーをダウンロードし指示に従ってください。  

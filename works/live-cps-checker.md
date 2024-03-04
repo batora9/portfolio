@@ -1,7 +1,9 @@
 ---
 title: Live CPS Checker
-date: "2024-03-04"
+createdAt: "2024-03-04"
+updatedAt: "2024-03-04"
 description: "1秒間に何回クリックしているかのCPS(Clicks per Second)をリアルタイムで測定するアプリを作りました。"
+published: true
 ---
 
 1秒間に何回クリックしているかのCPS(Clicks per Second)をリアルタイムで測定するアプリをC#で作りました。

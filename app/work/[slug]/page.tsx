@@ -44,7 +44,7 @@ export async function generateStaticParams() {
 
 // ブログ記事ページ
 export default async function WorkPost( { params } : Props ) {
-  const { slug, work } = params;
+  const { slug } = params;
   // ファイルのパスを取得
   const filePath = path.join(process.cwd(), "works", `${slug}.md`);
 
@@ -52,7 +52,10 @@ export default async function WorkPost( { params } : Props ) {
   const fileContents = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(fileContents);
   const title = data.title; // 記事のタイトル
-  const date = data.date; // 記事の日付
+  const createdAt = data.createdAt; // 記事の作成日
+  const updatedAt = data.updatedAt; // 記事の更新日
+  const createdAt_ja = new Date(createdAt).toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' });
+  const updatedAt_ja = new Date(updatedAt).toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' });
 
   metadata.title = title; // ページのタイトルを記事のタイトルにする
   metadata.description = data.description; // ページのディスクリプションを記事のディスクリプションにする
@@ -78,7 +81,7 @@ export default async function WorkPost( { params } : Props ) {
           <p className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
             {title}
           </p>
-          <p className="mt-2 text-sm text-gray-400">作成日 {date}</p>
+          <p className="mt-2 text-sm text-gray-400">作成日 {createdAt_ja} / 最終更新日 {updatedAt_ja}</p>
         </div>
         <div
           className="prose prose-lg text-white mx-auto max-w-3xl mt-8"

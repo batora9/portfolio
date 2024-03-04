@@ -1,6 +1,7 @@
 ---
 title: プログラミング演習I
-date: "2024-03-03"
+createdAt: "2024-03-03"
+updatedAt: "2024-03-03"
 description: "プログラミング演習の授業でのメモ"
 published: true
 ---

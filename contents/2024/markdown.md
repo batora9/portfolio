@@ -1,6 +1,6 @@
 ---
 title: Markdown記法まとめ
-date: "2024-03-04"
+c: "2024-03-04"
 description: "てきとうに記法をまとめました"
 published: false
 ---
