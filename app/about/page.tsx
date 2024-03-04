@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import HeaderShort from "../components/HeaderShort";
 
 export const metadata: Metadata = {
   title: "About",
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <div className="flex bg-black flex-col min-h-screen">
-      <Header />
+      <HeaderShort />
       <div className="bg-black text-white flex-col pb-24 pt-8 sm:py-16">
         <h1 className="text-3xl font-bold tracking-tight text-center text-gray-200 sm:text-4xl">
           About Me
