@@ -30,10 +30,10 @@ export default function Home() {
                 Contact
               </a>
               <a href="https://github.com/batora9" target="_blank" rel="noreferrer">
-                <img src="/github-mark-white.svg" alt="github" className="h-6 w-6" />
+                <img src="/github-mark-white.svg" alt="github" className="h-6 w-6 object-contain" />
               </a>
               <a href="https://x.com/265" target="_blank" rel="noreferrer">
-                <img src="/logo-white.png" alt="twitter" className="h-6 w-6" />
+                <img src="/logo-white.png" alt="twitter" className="h-6 w-6 object-contain" />
               </a>
             </div>
           </div>
