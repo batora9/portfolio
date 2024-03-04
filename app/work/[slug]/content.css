@@ -45,3 +45,7 @@
 #markdown-body pre [data-line] {
   padding: 0 1rem;
 }
+
+html {
+  scroll-padding-top: 15dvh;
+}

@@ -15,6 +15,7 @@ import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
 import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
+import rehypeSlug from 'rehype-slug';
 
 export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
@@ -67,6 +68,7 @@ export default async function BlogPost( { params } : Props ) {
     .use(remarkMath)
     .use(remarkHtml)
     .use(remarkRehype)
+    .use(rehypeSlug)
     .use(rehypeKatex)
     .use(rehypePrettyCode)
     .use(rehypeStringify)
