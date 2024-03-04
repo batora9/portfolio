@@ -73,7 +73,7 @@ export default async function BlogPost( { params } : Props ) {
   return (
     <div className="flex bg-black flex-col min-h-screen">
       <Header />
-      <div className="bg-black px-6 py-12 lg:px-8">
+      <div className="bg-black px-6 py-12 pb-16 pt-24 lg:px-8 ">
         <div className="mx-auto max-w-3xl text-base leading-7 text-white">
           <p className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
             {title}

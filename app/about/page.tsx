@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import Footer from "../components/Footer";
-import Header from "../components/Header";
-import HeaderShort from "../components/HeaderShort";
+import HeaderShort from "../components/Header";
 
 export const metadata: Metadata = {
   title: "About",

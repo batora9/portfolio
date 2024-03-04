@@ -65,8 +65,8 @@ export default async function BlogYearList({params} : Props) {
   return (
     <div className="flex bg-black flex-col min-h-screen">
       <Header />
-      <div className="bg-black text-white flex-col pb-24 pt-8 sm:py-16">
-        <p className="text-3xl font-bold tracking-tight text-center text-gray-200 sm:text-4xl">
+      <div className="bg-black text-white flex-col pb-16 pt-24">
+      <p className="text-3xl font-bold tracking-tight text-center text-gray-200 sm:text-4xl">
           {params.year}年のブログ
         </p>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
