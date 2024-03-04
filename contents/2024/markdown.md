@@ -1,6 +1,7 @@
 ---
 title: Markdown記法まとめ
-c: "2024-03-04"
+createdAt: "2024-03-04"
+updatedAt: "2024-03-05"
 description: "てきとうに記法をまとめました"
 published: false
 ---
