@@ -30,7 +30,7 @@
 }
   
 #markdown-body a {
-  @apply text-indigo-600;
+  @apply text-indigo-600 break-all;
 }
 
 #markdown-body code {
