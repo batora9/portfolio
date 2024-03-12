@@ -34,7 +34,7 @@
 }
 
 #markdown-body code {
-  @apply text-sm font-mono bg-gray-800 text-white p-1 rounded;
+  @apply text-sm font-mono bg-gray-800 text-white p-1 rounded break-all;
 }
 
 #markdown-body pre {
