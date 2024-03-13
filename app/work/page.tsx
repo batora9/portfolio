@@ -42,9 +42,6 @@ interface Post {
 }
 
 export default async function Work() {
-  // contentディレクトリ内のマークダウンファイル一覧を取得
-  const categoriesDirectory = path.join(process.cwd(), "works"); // /contents
-  const categories = fs.readdirSync(categoriesDirectory);
   const posts: Post[] = [];
   //worksディレクトリ内の記事を取得
   const postsDirectory = path.join(process.cwd(), "works"); // /contents/[category]
