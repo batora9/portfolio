@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Metadata } from "next";
+import { SiX, SiGithub } from 'react-icons/si';
 
 export const metadata: Metadata = {
   title: "ばとらの部屋",
@@ -30,10 +31,10 @@ export default function Home() {
                 Contact
               </a>
               <a href="https://github.com/batora9" target="_blank" rel="noreferrer">
-                <img src="/github-mark-white.svg" alt="github" className="h-6 w-6 object-contain" />
+                <SiGithub className="h-6 w-6 text-white" />
               </a>
               <a href="https://x.com/265" target="_blank" rel="noreferrer">
-                <img src="/logo-white.png" alt="twitter" className="h-6 w-6 object-contain" />
+                <SiX className="h-6 w-6 text-white" />
               </a>
             </div>
           </div>
